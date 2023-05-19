@@ -1,0 +1,140 @@
+button {
+  margin: 0px;
+}
+.collapsable .toggle {
+  background: seashell;
+  border: unset;
+  cursor: pointer;
+  font: unset;
+  padding: 10px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  height: 60px;
+  width: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collapsable .toggle:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 2px grey;
+}
+
+.collapsable .content {
+  border: 1px solid seashell;
+  padding: 0.5rem;
+  border-radius: 5px;
+  gap: 15px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collapsable .content-parent {
+  height: 0px;
+  overflow: hidden;
+  transition: height ease 0.3s;
+  margin-bottom: 10px;
+}
+.button-container {
+  margin-top: 5px;
+}
+.type-container {
+  margin: 5px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 780;
+}
+.undefined-container {
+  margin: 5px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 780;
+}
+.content .move-container {
+  margin: 5px;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 780;
+}
+.undefined {
+  display: flex;
+  flex-direction: column;
+}
+.data-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.type {
+  display: flex;
+}
+
+.fire {
+  background-color: red;
+}
+
+.normal {
+  background-color: grey;
+}
+.fighting {
+  background-color: brown;
+}
+.flying {
+  background-color: lightblue;
+}
+.poison {
+  background-color: purple;
+  color: white;
+}
+.ground {
+  background-color: burlywood;
+}
+.rock {
+  background-color: #c29976;
+}
+
+.bug {
+  background-color: #c9db8c;
+}
+
+.ghost {
+  background-color: #7e7f8c;
+}
+.steel {
+  background-color: #d0d8d9;
+}
+.water {
+  background-color: blue;
+  color: white;
+}
+.grass {
+  background-color: green;
+  color: white;
+}
+.electric {
+  background-color: yellow;
+}
+.psychic {
+  background-color: #c2a5d6;
+}
+.ice {
+  background-color: #a6ecf7;
+}
+.dragon {
+  background-color: #7d2ba6;
+}
+.dark {
+  background-color: #2a0d38;
+  color: white;
+}
+.fairy {
+  background-color: #e96ded;
+}
