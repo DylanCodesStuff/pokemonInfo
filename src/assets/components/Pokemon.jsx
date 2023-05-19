@@ -1,83 +1,27 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import axios from "axios";
 import "../styles/pokemon.css";
-import CollapsableContent from "./CollapsableContent";
+import CollapsableContent from "./CollapsableContent"; // Used to make the drop down tabs (ex. type(s), height)
+import getTypeFunction from "../getTypeFunction"; //Used to set the background color based on primary pokemon type
 
 export default function Pokemon() {
+  //Screen before any search or if pokemon doesn't exist.
   const placeholderImg =
     "https://freepngimg.com/thumb/pokemon/20090-7-pokemon-ash-hd.png";
-  const [inputPokemon, setInputPokemon] = React.useState("");
-  const [result, setResult] = React.useState(undefined);
+  const [inputPokemon, setInputPokemon] = React.useState(""); //Search Bar data
+  const [result, setResult] = React.useState(undefined); //Data received from axios request
 
-  useEffect(() => {
-    let color = getComputedStyle(document.documentElement).getPropertyValue(
-      "--color-background"
-    );
-    console.log(color);
-  }, [result]);
-
+  //Takes a color input and changes the background to it.
   function setColor(color) {
     document.documentElement.style.setProperty("--color-background", color);
   }
+  //Retrieves color based on pokemon type.
   function getColor(elementType) {
-    switch (elementType) {
-      case "fire":
-        return "#ed7809";
-
-      case "normal":
-        return "#bab1a8";
-
-      case "fighting":
-        return "#bf9c7a";
-
-      case "flying":
-        return "#53c2cf";
-
-      case "poison":
-        return "#7d33cc";
-
-      case "ground":
-        return "#d1cfb0";
-
-      case "rock":
-        return "#dba77b";
-
-      case "bug":
-        return "#cbe670";
-
-      case "ghost":
-        return "#727596";
-
-      case "steel":
-        return "#c1d8db";
-
-      case "water":
-        return "#80a2d1";
-
-      case "grass":
-        return "#75e679";
-
-      case "electric":
-        return "#e1f296";
-
-      case "psychic":
-        return "#cd74d4";
-
-      case "ice":
-        return "#7ed3e0";
-
-      case "dragon":
-        return "#9b4ec2";
-
-      case "dark":
-        return "#5b1b7a";
-
-      case "fairy":
-        return "#d952de";
-    }
+    return getTypeFunction(elementType);
   }
 
+  //Takes the returned data and gives it a capital first letter.
   const toCapitalized = (str) => {
     return str
       .toLowerCase()
@@ -85,6 +29,7 @@ export default function Pokemon() {
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
   };
+  //When someone presses enter to search -> fires off the axios fetch and resets the search bar.
   function handleKeyDown(e) {
     if (e.key == "Enter") {
       fetchPokemon();
@@ -92,6 +37,7 @@ export default function Pokemon() {
     }
   }
 
+  //Axios request to get data. Stores in state variable result. Also stores the color based on type.
   async function fetchPokemon() {
     try {
       const response = await axios.get(
@@ -120,7 +66,7 @@ export default function Pokemon() {
           value={inputPokemon}
         />
       </div>
-
+      {/* Ensures that result is not undefined before trying to process */}
       {result ? (
         <div className="pokemon-output-container">
           <div className="sprite-container">
@@ -133,7 +79,7 @@ export default function Pokemon() {
           <div className="name data-container">
             Name - {toCapitalized(result.name)}
           </div>
-          {/* //data-container */}
+
           <CollapsableContent
             title="Type(s)"
             data={result.types}
@@ -162,6 +108,7 @@ export default function Pokemon() {
           />
         </div>
       ) : (
+        // If no result, we'll just display the placeholder
         <div className="placeholder-container">
           <img className="placeholderImage" src={placeholderImg} />
         </div>
