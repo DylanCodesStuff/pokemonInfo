@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap");
-* {
-  font-family: "Manrope", sans-serif;
+.move-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-body {
-  background-color: var(--color-background);
-}
-.pokemon-input-container {
+.move-input-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +12,7 @@ body {
   align-items: center;
   margin-top: 60px;
 }
-.pokemon-input {
+.moves-input {
   position: relative;
   cursor: text;
   font-size: 14px;
@@ -30,40 +29,51 @@ body {
   transition: all 100ms ease-in-out;
 }
 
-.pokemon-input:focus {
+.move-input:focus {
   border-color: #3c4fe0;
   box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
 }
-.placeholderImage {
-  height: 60vh;
-}
-.placeholder-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-}
-.pokemon-output-container {
+
+.move-output-container {
+  border: 1px solid #000000;
+  width: 60%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.data-container {
-  background-color: seashell;
-  border-radius: 8px;
-  margin: 25px;
-  padding: 10px;
-  width: 500px;
-  height: 40px;
-  display: flex;
   justify-content: center;
   align-items: center;
-}
-.sprite {
   margin-top: 20px;
+  border-radius: 8px;
+  background-color: var(--color-type-background);
+  padding: 40px;
 }
-.placeholder-container {
+
+.move-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.accuracy-power-container {
+  display: flex;
+  gap: 25px;
+  font-size: 20px;
+}
+.move-pp {
+  margin: 15px;
+  font-size: 20px;
+}
+
+.move-type {
+  font-size: 18px;
+  margin: 10px;
+  background-color: var(--color-type-background);
+  border-radius: 8px;
+  padding: 5px;
+}
+.damage-class {
+  font-size: 18px;
+}
+.error-container {
   display: flex;
   flex-direction: column;
   justify-content: center;

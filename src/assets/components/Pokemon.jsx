@@ -11,6 +11,11 @@ export default function Pokemon() {
     "https://freepngimg.com/thumb/pokemon/20090-7-pokemon-ash-hd.png";
   const [inputPokemon, setInputPokemon] = React.useState(""); //Search Bar data
   const [result, setResult] = React.useState(undefined); //Data received from axios request
+  const [requestError, setRequestError] = React.useState(false); // Used to set a message if request fails
+  function cleanInput(str) {
+    str = str.replace(/\s+/g, "-").toLowerCase();
+    return str;
+  }
 
   //Takes a color input and changes the background to it.
   function setColor(color) {
@@ -41,13 +46,15 @@ export default function Pokemon() {
   async function fetchPokemon() {
     try {
       const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${inputPokemon.toLowerCase()}`
+        `https://pokeapi.co/api/v2/pokemon/${cleanInput(inputPokemon)}`
       );
       setResult(response.data);
+      setRequestError(false);
       setColor(getColor(response.data.types[0].type.name));
       //   console.log(response.data);
     } catch (error) {
       setResult(undefined);
+      setRequestError(true);
       console.error(error);
     }
   }
@@ -108,8 +115,11 @@ export default function Pokemon() {
           />
         </div>
       ) : (
-        // If no result, we'll just display the placeholder
+        // If no result, we'll just display the placeholder. Will not run unless axios throws error.
         <div className="placeholder-container">
+          {requestError ? (
+            <p>Let's try again! I couldn't find that one!</p>
+          ) : null}
           <img className="placeholderImage" src={placeholderImg} />
         </div>
       )}

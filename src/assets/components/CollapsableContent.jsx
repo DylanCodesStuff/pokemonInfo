@@ -12,6 +12,15 @@ export default function CollapsableContent(props) {
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
   };
+  const cleanOutput = (str) => {
+    let regex = /\-/g;
+    return str
+      .replace(regex, " ")
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
   return (
     <div className="collapsable">
       <div className="button-container">
@@ -38,7 +47,9 @@ export default function CollapsableContent(props) {
                       item[props.keyWord][props.keyWordTwo]
                     } type-container`}
                   >
-                    {toCapitalized(item[props.keyWord][props.keyWordTwo])}
+                    {cleanOutput(
+                      toCapitalized(item[props.keyWord][props.keyWordTwo])
+                    )}
                   </div>
                 ))
               : props.data}
