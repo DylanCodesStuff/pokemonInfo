@@ -9,10 +9,12 @@ export default function Moves() {
 
   const placeholderImg =
     "https://poketouch.files.wordpress.com/2016/05/shiny_machamp_pokemon_artwork.png?w=584";
-  async function fetchMove() {
+  async function fetchMove(random) {
     try {
       const response = await axios.get(
-        `https://pokeapi.co/api/v2/move/${cleanInput(inputMove)}`
+        `https://pokeapi.co/api/v2/move/${
+          random ? random : cleanInput(inputMove)
+        }`
       );
       setMoveResult(response.data);
       setRequestError(false);
@@ -58,6 +60,13 @@ export default function Moves() {
     return getTypeFunction(elementType);
   }
 
+  function getRandom() {
+    //Could update when more moves are released/added to the api.
+    const maxNumber = 902;
+    //Using math ceil as we want to accept 1 through 902. NOT 0.
+    let randomNumber = Math.ceil(Math.random() * maxNumber);
+    return fetchMove(randomNumber);
+  }
   return (
     <>
       <div className="move-page">
@@ -72,6 +81,13 @@ export default function Moves() {
             onKeyDown={handleKeyDown}
             value={inputMove}
           />
+          <br></br>
+          <div className="random-container">
+            <p>Can't Think of Any...</p>
+            <button className="button-random" onClick={getRandom}>
+              Random
+            </button>
+          </div>
         </div>
 
         {moveResult ? (

@@ -43,10 +43,12 @@ export default function Pokemon() {
   }
 
   //Axios request to get data. Stores in state variable result. Also stores the color based on type.
-  async function fetchPokemon() {
+  async function fetchPokemon(random) {
     try {
       const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${cleanInput(inputPokemon)}`
+        `https://pokeapi.co/api/v2/pokemon/${
+          random ? random : cleanInput(inputPokemon)
+        }`
       );
       setResult(response.data);
       setRequestError(false);
@@ -59,6 +61,13 @@ export default function Pokemon() {
     }
   }
 
+  function getRandom() {
+    //Could update when more pokemon are released/added to the api.
+    const maxNumber = 1010;
+    //Using math ceil as we want to accept 1 through 1010. NOT 0.
+    let randomNumber = Math.ceil(Math.random() * maxNumber);
+    return fetchPokemon(randomNumber);
+  }
   return (
     <>
       <div className="pokemon-input-container">
@@ -72,7 +81,15 @@ export default function Pokemon() {
           onKeyDown={handleKeyDown}
           value={inputPokemon}
         />
+        <br></br>
+        <div className="random-container">
+          <p>Can't Think of Any...</p>
+          <button className="button-random" onClick={getRandom}>
+            Random
+          </button>
+        </div>
       </div>
+
       {/* Ensures that result is not undefined before trying to process */}
       {result ? (
         <div className="pokemon-output-container">
