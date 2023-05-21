@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap");
+
 .homepage-container {
   background: url("https://freepngimg.com/download/pokemon/37446-1-pokemon-ash-transparent-background.png")
     no-repeat center center;
@@ -10,13 +11,16 @@
   align-items: center;
   text-align: center;
   background-color: #c0ebe6;
+  overflow-y: hidden;
 }
 a {
   all: unset;
 }
 body {
   height: 100vh;
+  overflow: hidden;
 }
+
 .hero-header {
   font-family: "Manrope", sans-serif;
   display: flex;
@@ -66,4 +70,28 @@ body {
 }
 .get-started-button:hover {
   background-color: #21e065;
+}
+@media (max-width: 767px) {
+  .hero-header {
+    margin-top: 15px;
+  }
+  .hero-text {
+    font-size: 23px;
+  }
+  .hero-text2 {
+    font-size: 18px;
+  }
+  .homepage-container {
+    background: url("https://freepngimg.com/download/pokemon/37446-1-pokemon-ash-transparent-background.png")
+      no-repeat center center;
+    background-position-y: bottom;
+    background-size: contain;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #c0ebe6;
+  }
 }

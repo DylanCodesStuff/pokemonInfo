@@ -22,14 +22,13 @@ export default function Navbar() {
         <Link to="/" onClick={resetBackground}>
           Home
         </Link>
-        <Link to="/pokemon" onClick={resetBackground}>
-          Pokemon
-        </Link>
-        <Link to="/berries" onClick={resetBackground}>
-          Berries
-        </Link>
+        <Link to="/pokemon">Pokemon</Link>
+
         <Link to="/moves" onClick={resetBackground}>
           Moves
+        </Link>
+        <Link to="/about" onClick={resetBackground}>
+          About
         </Link>
       </div>
     </div>

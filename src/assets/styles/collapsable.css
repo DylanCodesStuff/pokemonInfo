@@ -138,3 +138,13 @@ button {
 .fairy {
   background-color: #e96ded;
 }
+@media (max-width: 820px) {
+  .collapsable .toggle {
+    width: 80%;
+  }
+  .button-container {
+    width: 300px;
+  }
+  .type-container {
+  }
+}
