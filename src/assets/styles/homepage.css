@@ -20,7 +20,9 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 .hero-header {
   font-family: "Manrope", sans-serif;
   display: flex;
