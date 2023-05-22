@@ -1,8 +1,8 @@
 .dylan-image {
   object-fit: cover;
   border-radius: 50%;
-  height: 600px;
-  width: 600px;
+  width: 300px;
+  height: 300px;
 }
 
 .page-container {
