@@ -16,10 +16,10 @@ export default function Berries() {
           <p>
             I am a self-taught programmer who has built this website with no
             guide or hand-holding. This is a complete bottoms-up project that
-            demonstrates my knowledge of full-stack development. Anyone can copy
-            a project they code along with from youtube, but I thought it would
-            be much more valuable to display my true, confident, and genuine
-            skills with this handcrafted project.
+            showcases my knowledge of web development. Anyone can copy a project
+            they code along with from youtube, but I thought it would be much
+            more valuable to display my true, confident, and genuine skills with
+            this handcrafted project.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function Berries() {
             <li>Phone: 716-490-5909</li>
             <li>
               LinkedIn:{" "}
-              <a href="linkedin.com/in/dylanscriven">
+              <a href="https://linkedin.com/in/dylanscriven">
                 linkedin.com/in/dylanscriven
               </a>
             </li>
