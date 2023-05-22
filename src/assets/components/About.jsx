@@ -45,7 +45,7 @@ export default function Berries() {
             <li>Phone: 716-490-5909</li>
             <li>
               LinkedIn:{" "}
-              <a href="https://linkedin.com/in/dylanscriven">
+              <a target="_blank" href="https://linkedin.com/in/dylanscriven">
                 linkedin.com/in/dylanscriven
               </a>
             </li>
