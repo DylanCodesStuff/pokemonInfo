@@ -7,7 +7,7 @@ export default function Navbar() {
     document.documentElement.style.setProperty("--color-background", "#c0ebe6");
   }
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="left">
         <Link className="pikachu" to="/" onClick={resetBackground}>
           <img src={iconImg} className="pikachu-logo" />
@@ -19,18 +19,20 @@ export default function Navbar() {
         </p>
       </div>
       <div className="right">
-        <Link to="/" onClick={resetBackground}>
+        <Link to="/" className="right-text" onClick={resetBackground}>
           Home
         </Link>
-        <Link to="/pokemon">Pokemon</Link>
+        <Link to="/pokemon" className="right-text">
+          Pokemon
+        </Link>
 
-        <Link to="/moves" onClick={resetBackground}>
+        <Link to="/moves" onClick={resetBackground} className="right-text">
           Moves
         </Link>
-        <Link to="/about" onClick={resetBackground}>
+        <Link to="/about" onClick={resetBackground} className="right-text">
           About
         </Link>
       </div>
-    </div>
+    </nav>
   );
 }
