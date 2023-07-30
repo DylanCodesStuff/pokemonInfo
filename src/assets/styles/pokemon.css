@@ -3,11 +3,13 @@
 * {
   font-family: "Lato", sans-serif;
 }
+
 body {
   background-color: var(--color-background);
   overflow: auto;
   overflow-x: hidden;
 }
+
 .pokemon-input-container {
   display: flex;
   flex-direction: column;

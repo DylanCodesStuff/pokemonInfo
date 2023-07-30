@@ -1,55 +1,66 @@
 import React from "react";
 import "../styles/about.css";
-export default function Berries() {
+export default function AboutMe() {
   return (
-    <div className="page-container">
-      <div className="left-box">
-        <div className="img-container">
-          <img
-            alt="picture of creator"
-            className="dylan-image"
-            src="https://i.ibb.co/wRYM5Wp/IMG-3714.png"
-          />
+    <div className="about-me-container">
+      <div className="banner">
+        <h1 className="quote-text">
+          "Accept the challenges so that you can feel the exhilaration of victory"
+          <br></br>-George Patton
+        </h1>
+      </div>
+      <div className="who-am-i">
+        <div className="who-am-i-text-container about-text-container">
+          <h2 className="who-am-i-header">Who am I?</h2>
+          <p className="who-am-i-paragraph about-text">
+            Hi there! My name is Dylan, and I am a 20 year old who is heavily interested in software development. During my time at
+            university, I completed my Bachelor's degree in Finance with a minor in Computer Information Systems in 2 years. Recently,
+            I have restarted my learning journey as I am looking to make a shift professionally, from finance to software. I have
+            developed a mindset which accepts that I do not know everything, and am willing to learn anything.
+          </p>
         </div>
-        <div className="div-one">
-          <h1>Who Am I?</h1>
-          <p>
-            I am a self-taught programmer who has built this website with no
-            guide or hand-holding. This is a complete bottoms-up project that
-            showcases my knowledge of web development. Anyone can copy a project
-            they code along with from youtube, but I thought it would be much
-            more valuable to display my true, confident, and genuine skills with
-            this handcrafted project.
+        <div className="who-am-i-image-container about-img-container">
+          <img className="who-am-i-image about-img" src="/who-am-i-img.png" />
+        </div>
+      </div>
+
+      <div className="in-my-freetime">
+        <div className="in-my-freetime-image-container about-img-container">
+          <img className="in-my-freetime-image about-img" src="/pickleball-player.png" />
+        </div>
+        <div className="in-my-freetime-text-container about-text-container">
+          <h2 className="in-my-freetime-header">In my freetime?</h2>
+          <p className="in-my-freetime-paragraph about-text">
+            I have always enjoyed playing sports and staying active in my freetime. I believe this is a good mental and physical reset
+            after a long day of technical work. Currently, I play pickleball and soccer at my local rec league. Yes - pickleball the
+            "old man's sport" - is quite fun even when you're young.
           </p>
         </div>
       </div>
-      <div className="right-box">
-        <div className="div-two">
-          <h1>What's My Goal?</h1>
-          <p>
-            I am attempting to imporove my design and programming skills by
-            building projects that introduce me to new technologies and
-            reinforce familiar ones. This will set me up to become the best
-            developer I can be.
-          </p>
-        </div>
-
-        <div className="div-three">
-          <h1>What's Next</h1>
-          <p>
-            If you are a potential employer I would be very excited to hear from
-            you at one of the following contact points!
-          </p>
-          <ul>
-            <li>Email: dscriven16@gmail.com</li>
-            <li>Phone: 716-490-5909</li>
-            <li>
-              LinkedIn:{" "}
-              <a target="_blank" href="https://linkedin.com/in/dylanscriven">
-                linkedin.com/in/dylanscriven
+      <div className="portfolio-link">
+        <div className="portfolio-link-text-container about-text-container">
+          <h2 className="portfolio-link-header">Want to see more?</h2>
+          <p className="portfolio-link-paragraph about-text">
+            Please feel free to check out my web portfolio at{" "}
+            <span>
+              <a className="web-portfolio-link" href="https://dylanscriven.netlify.app" target="_blank">
+                dylanscriven.netlify.app
               </a>
-            </li>
-          </ul>
+            </span>
+            .
+          </p>
+          <p className="about-text">Contact Info:</p>
+          <p className="about-text">
+            LinkedIn:{" "}
+            <a className="web-portfolio-link" href="https://linkedin.com/in/dylanscriven" target="_blank">
+              @dylanscriven
+            </a>
+          </p>
+          <p className="about-text">Phone: 716-490-5909</p>
+          <p className="about-text">Email: dscriven16@gmail.com</p>
+        </div>
+        <div className="portfolio-link-image-container about-img-container">
+          <img className="portfolio-link-image about-img" src="/webportfolio.jpg" />
         </div>
       </div>
     </div>

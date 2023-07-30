@@ -7,8 +7,7 @@ import getTypeFunction from "../getTypeFunction"; //Used to set the background c
 
 export default function Pokemon() {
   //Screen before any search or if pokemon doesn't exist.
-  const placeholderImg =
-    "https://freepngimg.com/thumb/pokemon/20090-7-pokemon-ash-hd.png";
+  const placeholderImg = "https://freepngimg.com/thumb/pokemon/20090-7-pokemon-ash-hd.png";
   const [inputPokemon, setInputPokemon] = React.useState(""); //Search Bar data
   const [result, setResult] = React.useState(undefined); //Data received from axios request
   const [requestError, setRequestError] = React.useState(false); // Used to set a message if request fails
@@ -45,11 +44,7 @@ export default function Pokemon() {
   //Axios request to get data. Stores in state variable result. Also stores the color based on type.
   async function fetchPokemon(random) {
     try {
-      const response = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${
-          random ? random : cleanInput(inputPokemon)
-        }`
-      );
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random ? random : cleanInput(inputPokemon)}`);
       setResult(response.data);
       setRequestError(false);
       setColor(getColor(response.data.types[0].type.name));
@@ -69,7 +64,7 @@ export default function Pokemon() {
     return fetchPokemon(randomNumber);
   }
   return (
-    <>
+    <div className="pokemon-page">
       <div className="pokemon-input-container">
         <h3>Search for Details about your Favorite Pokemon!</h3>
         <br></br>
@@ -94,52 +89,23 @@ export default function Pokemon() {
       {result ? (
         <div className="pokemon-output-container">
           <div className="sprite-container">
-            {result.sprites.front_default ? (
-              <img className="sprite" src={result.sprites.front_default} />
-            ) : (
-              "No Image"
-            )}
+            {result.sprites.front_default ? <img className="sprite" src={result.sprites.front_default} /> : "No Image"}
           </div>
-          <div className="name data-container">
-            Name - {toCapitalized(result.name)}
-          </div>
+          <div className="name data-container">Name - {toCapitalized(result.name)}</div>
 
-          <CollapsableContent
-            title="Type(s)"
-            data={result.types}
-            keyWord="type"
-            keyWordTwo="name"
-          />
-          <CollapsableContent
-            title="Height"
-            data={(result.height * 0.32808389).toFixed(1) + " Feet"}
-          />
-          <CollapsableContent
-            title="Weight"
-            data={(result.weight * 0.220462).toFixed(1) + " Pounds"}
-          />
-          <CollapsableContent
-            title="Possible Moves"
-            data={result.moves}
-            keyWord="move"
-            keyWordTwo="name"
-          />
-          <CollapsableContent
-            title="Abilities"
-            data={result.abilities}
-            keyWord="ability"
-            keyWordTwo="name"
-          />
+          <CollapsableContent title="Type(s)" data={result.types} keyWord="type" keyWordTwo="name" />
+          <CollapsableContent title="Height" data={(result.height * 0.32808389).toFixed(1) + " Feet"} />
+          <CollapsableContent title="Weight" data={(result.weight * 0.220462).toFixed(1) + " Pounds"} />
+          <CollapsableContent title="Possible Moves" data={result.moves} keyWord="move" keyWordTwo="name" />
+          <CollapsableContent title="Abilities" data={result.abilities} keyWord="ability" keyWordTwo="name" />
         </div>
       ) : (
         // If no result, we'll just display the placeholder. Will not run unless axios throws error.
         <div className="placeholder-container">
-          {requestError ? (
-            <p>Let's try again! I couldn't find that one!</p>
-          ) : null}
+          {requestError ? <p>Let's try again! I couldn't find that one!</p> : null}
           <img className="placeholderImage" src={placeholderImg} />
         </div>
       )}
-    </>
+    </div>
   );
 }

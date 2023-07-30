@@ -16,6 +16,7 @@ export default function Homepage() {
         </Link>
       </div>
       <div className="caption">Join us on your Pokemon Adventure!</div>
+      <div className="tech-logos"></div>
     </div>
   );
 }

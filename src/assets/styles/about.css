@@ -1,104 +1,158 @@
-.dylan-image {
-  object-fit: cover;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
+* {
+  font-family: "Lato", sans-serif;
 }
-
-.page-container {
+.banner {
   display: flex;
-  padding: 75px;
-}
-.left-box {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 70vh;
-  width: 60%;
-  font-size: 35px;
-  margin: 10px;
+  padding: 100px !important;
+  background: black;
+  color: white;
+  font-family: "Lato", sans-serif;
+  margin-bottom: 50px;
 }
-.div-one p {
-  font-size: 24px;
-  max-width: 450px;
-}
-.right-box {
+.who-am-i {
   display: flex;
-  flex-direction: column;
+  padding: 70px;
   justify-content: space-evenly;
-  align-items: center;
-  width: 70%;
-  font-size: 35px;
-  margin: 10px;
-  max-width: 450px;
+  overflow: hidden;
+}
+.quote-text {
+  font-size: 70px !important;
+  font-weight: 700 !important;
+}
+.who-am-i-header {
+  font-weight: 400 !important;
+  font-size: 48px !important;
+  padding-bottom: 20px !important;
 }
 
-.div-two {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.about-img-container {
+  height: 300px;
+  margin-left: 20px;
 }
-.div-three {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.who-am-i-image {
+  height: 100%;
+  flex-shrink: 1;
+  margin-left: 20px;
+}
+.about-text-container {
+  max-width: 800px;
+  overflow: hidden;
+  font-weight: 300;
 }
 
-.div-two p {
-  font-size: 18px;
+.in-my-freetime {
+  display: flex;
+  padding: 70px;
+  justify-content: space-evenly;
 }
-.div-three p {
-  font-size: 18px;
+.in-my-freetime-header {
+  font-weight: 400 !important;
+  font-size: 48px;
+  padding-bottom: 20px;
 }
-ul {
-  margin-top: 40px;
-  padding: 0;
+.in-my-freetime-image {
+  height: 100%;
+  flex-shrink: 1;
+  margin-right: 20px;
 }
-li {
-  font-size: 16px;
-  list-style: none;
+.about-text {
+  line-height: 2;
+  font-size: 25px;
 }
-li a {
-  color: blue;
+
+.portfolio-link-image {
+  height: 100%;
+  flex-shrink: 1;
+  margin-left: 20px;
 }
-@media (max-width: 767px) {
-  .dylan-image {
-    width: 100px;
-    height: 100px;
+.portfolio-link-container {
+  max-width: 800px;
+  overflow: hidden;
+  font-weight: 300;
+}
+
+.portfolio-link {
+  display: flex;
+  padding: 70px;
+  justify-content: space-evenly;
+}
+.portfolio-link-header {
+  font-weight: 400 !important;
+  font-size: 48px;
+  padding-bottom: 20px;
+}
+.portfolio-link-image {
+  height: 100%;
+  flex-shrink: 1;
+  margin-right: 20px;
+}
+.about-text {
+  line-height: 2;
+  font-size: 25px;
+}
+.web-portfolio-link {
+  color: blue !important;
+}
+
+@media (max-width: 820px) {
+  .about-me-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-  .right-box {
-    font-size: 10px;
+  .banner {
+    padding: 20px;
+    width: fit-content;
   }
-  .left-box {
-    font-size: 10px;
-    margin: 2px;
+  .quote-text {
+    font-size: 40px !important;
+  }
+  .who-am-i {
+    flex-wrap: wrap;
+    width: fit-content;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .who-am-i-image {
     width: 100%;
+    margin-left: 0px;
+    height: auto;
+    margin-top: 12px;
   }
-  .div-one p {
-    font-size: 10px;
-    margin: 2px;
+  .who-am-i-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 0px;
+    max-width: 450px;
   }
-  .div-two p {
-    font-size: 10px;
-    margin: 2px;
-    max-width: 120px;
+  .who-am-i-text-container {
+    text-align: center;
   }
-  .div-three p {
-    font-size: 10px;
-    margin: 2px;
-    max-width: 120px;
+
+  .in-my-freetime {
+    flex-wrap: wrap;
+    width: fit-content;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
   }
-  ul {
-    margin-top: 10px;
+  .in-my-freetime-image {
+    width: 100%;
+    margin-left: 0px;
+    height: auto;
+    margin-top: 12px;
   }
-  li {
-    font-size: 10px;
-    list-style: none;
+  .in-my-freetime-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 0px;
+    max-width: 450px;
   }
 }

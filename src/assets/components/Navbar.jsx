@@ -4,8 +4,9 @@ import "../styles/navbar.css";
 export default function Navbar() {
   const iconImg = "https://pngimg.com/uploads/pokemon/pokemon_PNG146.png";
   function resetBackground() {
-    document.documentElement.style.setProperty("--color-background", "#c0ebe6");
+    document.documentElement.style.setProperty("--color-background", "#4fcebf");
   }
+
   return (
     <nav className="navbar">
       <div className="left">
