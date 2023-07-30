@@ -75,10 +75,9 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    background-color: transparent;
     padding: 5px;
-    box-shadow: 0px 2px 3px 0.2px grey;
-    width: 100vw;
+    width: auto;
   }
   h1 .hero-text {
     text-align: center;

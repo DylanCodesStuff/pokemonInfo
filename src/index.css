@@ -5,6 +5,7 @@
   --color-background: #4fcebf;
   --color-type-background: red;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
